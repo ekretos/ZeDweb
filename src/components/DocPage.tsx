@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, ShieldBan, Bot, Gavel, Bell, ScrollText, Lock, Terminal, Settings, Shield, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, ShieldBan, Bot, Gavel, Bell, ScrollText, Lock, Terminal, Settings, AlertTriangle, Heart, MessageCircle } from 'lucide-react';
 
 const docs = {
   antinuke: {
@@ -53,6 +53,121 @@ const docs = {
           '`{p}whitelist owner` - Add/Edit owners in whitelist',
           '`{p}whitelist show` - Display whitelist data',
           '`{p}whitelist action` `action` - Configure antinuke actions for users'
+        ]
+      }
+    ]
+  },
+  welcome: {
+    title: 'Welcome System',
+    icon: Heart,
+    description: 'Comprehensive welcome system with interactive configuration, custom messages, embeds, and member greeting features.',
+    ogDescription: 'Learn how to set up Zero Degree\'s Welcome System. Create beautiful welcome messages, customize greetings, configure auto-roles, and make new members feel at home in your Discord server.',
+    sections: [
+      {
+        title: 'Overview',
+        content: 'The Welcome System provides a complete interactive interface for configuring welcome messages when new members join your server. Features include text messages, rich embeds, auto-role assignment, DM greetings, and extensive variable support.'
+      },
+      {
+        title: 'Features',
+        content: [
+          'Interactive button-based configuration interface',
+          'Text and embed welcome messages with variables',
+          'Automatic role assignment for new members',
+          'Direct message welcome greetings',
+          'Live preview and testing functionality',
+          'Extensive variable system with 50+ placeholders',
+          'Channel and permission validation',
+          'Multi-language support'
+        ]
+      },
+      {
+        title: 'Main Command',
+        content: [
+          '`/welcome` - Opens the interactive welcome configuration panel',
+          '**Required Permission:** Manage Server',
+          '**Bot Permissions:** Send Messages, Embed Links in welcome channel'
+        ]
+      },
+      {
+        title: 'Interactive Configuration',
+        content: 'The `/welcome` command opens an interactive panel with these options:\n\n**📍 Channel** - Set the welcome channel\n**🎭 Role** - Configure auto-role assignment\n**👁️ Test Preview** - Preview your welcome setup\n**📝 Text Message** - Set custom text message\n**🎨 Embed Message** - Configure rich embed\n**💬 DM** - Enable/disable direct messages\n**🧪 Test** - Send test welcome message\n**📋 Variables** - View all available variables\n**🚫 Disable** - Disable welcome system'
+      },
+      {
+        title: 'Embed Editor',
+        content: 'The embed editor allows you to customize:\n\n**📝 Title** - Main heading (max 256 characters)\n**📄 Description** - Main content (max 4096 characters)\n**🎨 Color** - Border color (hex codes, color names, RGB)\n**🖼️ Thumbnail** - Small image in top-right corner\n**📷 Image** - Large image at bottom\n**🗑️ Clear All** - Remove all embed properties\n\nSupports variables in all fields including image URLs.'
+      },
+      {
+        title: 'Variable System',
+        content: 'Over 50 variables available across 4 categories:\n\n**👤 Member Info:** `{mention}`, `{tag}`, `{displayName}`, `{nickname}`, `{userId}`, `{username}`\n**📊 Account & Join:** `{accountAge}`, `{accountAgeInDays}`, `{joinPosition}`, `{isBot}`, `{isNewAccount}`\n**🌐 Server Info:** `{guildName}`, `{guildId}`, `{memberCount}`, `{humanMembers}`, `{botMembers}`, `{onlineMembers}`\n**🖼️ Visual:** `{avatar}`, `{avatar.small}`, `{guildIcon}`, `{guildBanner}`\n**⏰ Timestamps:** `{currentTime}`, `{member.joinedTimestamp.format.F}`, `{user.createdTimestamp.format.R}`\n**🎲 Dynamic:** `{randomGreeting}`, `{randomWelcome}`, `{timeGreeting}`'
+      },
+      {
+        title: 'Advanced Features',
+        content: [
+          '**Auto-Role Assignment** - Automatically assign roles to new members',
+          '**DM Greetings** - Send personalized direct messages',
+          '**Test System** - Preview and test your configuration',
+          '**URL Validation** - Automatic URL sanitization and validation',
+          '**Error Handling** - Detailed error messages and validation',
+          '**Permission Checks** - Validates bot and user permissions',
+          '**Multi-format Support** - Text, embeds, or both combined'
+        ]
+      }
+    ]
+  },
+  'custom-embed': {
+    title: 'Custom Embed',
+    icon: MessageCircle,
+    description: 'Create beautiful, professional-looking embedded messages with rich formatting, interactive buttons, and custom styling.',
+    ogDescription: 'Master Zero Degree\'s Custom Embed feature. Create stunning Discord embeds with rich formatting, colors, images, interactive buttons, and professional styling for announcements and messages.',
+    sections: [
+      {
+        title: 'Overview',
+        content: 'The Custom Embed system allows you to create rich, visually appealing messages with interactive components that stand out in your Discord server. Perfect for announcements, rules, information displays, and interactive content with buttons.'
+      },
+      {
+        title: 'Features',
+        content: [
+          'Rich text formatting with custom colors and styling',
+          'Custom titles, descriptions, author, and footer text',
+          'Interactive buttons with custom actions',
+          'Embed cloning and management system',
+          'Usage tracking and analytics',
+          'Autocomplete for easy embed selection',
+          'Modal-based embed builder interface'
+        ]
+      },
+      {
+        title: 'Main Commands',
+        content: [
+          '`/embed create <name> [description]` - Create a new custom embed',
+          '`/embed edit <embed>` - Edit an existing embed',
+          '`/embed send <embed> [channel]` - Send embed to a channel',
+          '`/embed list` - List all custom embeds in server',
+          '`/embed delete <embed>` - Delete a custom embed',
+          '`/embed clone <embed> <name>` - Clone an existing embed'
+        ]
+      },
+      {
+        title: 'Embed Creation Process',
+        content: 'When creating an embed with `/embed create`, you\'ll go through these steps:\n\n1. **Basic Information Modal** - Set title, description, color (hex format), author name, and footer text\n2. **Advanced Options** - Choose to add images, fields, buttons, or finish\n3. **Interactive Builder** - Use buttons to enhance your embed:\n   • 🖼 Add Images - Set thumbnail and banner images\n   • 📝 Add Fields - Create structured information sections\n   • 🔘 Add Buttons - Create interactive buttons\n   • ✅ Finish & Save - Finalize and save your embed'
+      },
+      {
+        title: 'Embed Components',
+        content: 'Customize your embeds with these components:\n\n**Title** - Main heading (max 256 characters)\n**Description** - Main content text (max 4000 characters)\n**Color** - Sidebar color (hex format: #0099ff or 0x0099ff)\n**Author** - Author name displayed at top\n**Footer** - Footer text at bottom (max 2048 characters)\n**Fields** - Additional structured information\n**Images** - Thumbnail and banner images\n**Buttons** - Interactive buttons (up to 25 buttons in 5 rows)'
+      },
+      {
+        title: 'Interactive Buttons',
+        content: 'Add interactive buttons to your embeds:\n\n**Button Styles:**\n• Primary (Blue)\n• Secondary (Gray)\n• Success (Green)\n• Danger (Red)\n• Link (External URL)\n\n**Button Features:**\n• Custom labels and emojis\n• Enable/disable states\n• URL links for external resources\n• Custom actions and responses\n• Up to 5 buttons per row, 5 rows maximum'
+      },
+      {
+        title: 'Management Features',
+        content: [
+          '**Autocomplete** - Type embed names or IDs for quick selection',
+          '**Usage Tracking** - Monitor how often embeds are used',
+          '**Cloning** - Duplicate existing embeds with new names',
+          '**Permissions** - Requires Manage Messages permission',
+          '**Validation** - Automatic validation before sending',
+          '**Error Handling** - Detailed error messages for troubleshooting'
         ]
       }
     ]
@@ -119,21 +234,56 @@ const docs = {
   }
 };
 
+// Function to render text with bold formatting and inline code
+function renderTextWithBold(text: string) {
+  // First split by bold markers, then handle code within each part
+  const boldParts = text.split(/(\*\*.*?\*\*)/g);
+
+  return boldParts.map((part, boldIndex) => {
+    if (part.startsWith('**') && part.endsWith('**') && part.length > 4) {
+      // Remove the ** markers and render as bold, but also check for code inside
+      const boldText = part.slice(2, -2);
+      const codeParts = boldText.split(/(`.*?`)/g);
+
+      const boldContent = codeParts.map((codePart, codeIndex) => {
+        if (codePart.startsWith('`') && codePart.endsWith('`') && codePart.length > 2) {
+          const codeText = codePart.slice(1, -1);
+          return <code key={codeIndex} className="bg-slate-800 text-indigo-300 px-1 py-0.5 rounded text-sm font-mono">{codeText}</code>;
+        }
+        return codePart;
+      });
+
+      return <strong key={boldIndex} className="font-bold text-white">{boldContent}</strong>;
+    } else {
+      // Handle code in regular text
+      const codeParts = part.split(/(`.*?`)/g);
+
+      return codeParts.map((codePart, codeIndex) => {
+        if (codePart.startsWith('`') && codePart.endsWith('`') && codePart.length > 2) {
+          const codeText = codePart.slice(1, -1);
+          return <code key={`${boldIndex}-${codeIndex}`} className="bg-slate-800 text-indigo-300 px-1 py-0.5 rounded text-sm font-mono">{codeText}</code>;
+        }
+        return codePart;
+      });
+    }
+  });
+}
+
 function DocPage() {
   const { feature } = useParams();
   const doc = docs[feature as keyof typeof docs];
-  
+
   useEffect(() => {
     if (doc) {
       // Update meta tags
       document.title = `${doc.title} - Zero Degree Documentation`;
-      
+
       // Update OG meta tags
       const ogTitle = document.querySelector('meta[property="og:title"]');
       const ogDesc = document.querySelector('meta[property="og:description"]');
       const twitterTitle = document.querySelector('meta[name="twitter:title"]');
       const twitterDesc = document.querySelector('meta[name="twitter:description"]');
-      
+
       if (ogTitle) ogTitle.setAttribute('content', `${doc.title} - Zero Degree Documentation`);
       if (ogDesc) ogDesc.setAttribute('content', doc.ogDescription);
       if (twitterTitle) twitterTitle.setAttribute('content', `${doc.title} - Zero Degree Documentation`);
@@ -155,7 +305,7 @@ function DocPage() {
   }
 
   const Icon = doc.icon;
-  const isComingSoon = feature !== 'antinuke';
+  const isComingSoon = !['antinuke', 'welcome', 'custom-embed'].includes(feature as string);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-indigo-950 to-slate-900">
@@ -163,7 +313,7 @@ function DocPage() {
         <Link to="/" className="text-indigo-300 hover:text-indigo-100 inline-flex items-center mb-8">
           <ArrowLeft className="mr-2" /> Return to home
         </Link>
-        
+
         <div className="bg-slate-900/40 backdrop-blur-sm border border-indigo-800/30 rounded-lg p-8 mb-8">
           <div className="flex items-center mb-6">
             <div className="bg-indigo-950/50 p-3 rounded-full">
@@ -193,13 +343,15 @@ function DocPage() {
                   {Array.isArray(section.content) ? (
                     <ul className="list-disc list-inside space-y-2 text-indigo-200">
                       {section.content.map((item, i) => (
-                        <li key={i}>{item}</li>
+                        <li key={i}>{renderTextWithBold(item)}</li>
                       ))}
                     </ul>
                   ) : (
                     <div className="text-indigo-200 space-y-4">
                       {section.content.split('\n\n').map((paragraph, i) => (
-                        <p key={i} className="whitespace-pre-wrap font-mono">{paragraph}</p>
+                        <p key={i} className="whitespace-pre-wrap font-mono">
+                          {renderTextWithBold(paragraph)}
+                        </p>
                       ))}
                     </div>
                   )}

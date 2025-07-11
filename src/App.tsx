@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
-import { Snowflake, Zap, Users, ShieldBan, Bot, Gavel, Mouse, Bell, ScrollText, Lock } from 'lucide-react';
+import { Snowflake, Zap, Users, ShieldBan, Bot, Gavel, Mouse, Bell, ScrollText, Lock, Heart, MessageCircle } from 'lucide-react';
 import DocPage from './components/DocPage';
 import TermsOfService from './components/TermsOfService';
 import PrivacyPolicy from './components/PrivacyPolicy';
@@ -56,6 +56,18 @@ function HomePage() {
       icon: <ShieldBan className="h-8 w-8 text-indigo-400" />,
       title: "Antinuke",
       description: "Advanced protection against mass bans, channel deletions, and role modifications with instant threat neutralization"
+    },
+    {
+      id: 'welcome',
+      icon: <Heart className="h-8 w-8 text-indigo-400" />,
+      title: "Welcome",
+      description: "Customizable welcome messages and greetings to warmly introduce new members to your server community"
+    },
+    {
+      id: 'custom-embed',
+      icon: <MessageCircle className="h-8 w-8 text-indigo-400" />,
+      title: "Custom Embed",
+      description: "Create beautiful, professional-looking embedded messages with rich formatting and custom styling"
     },
     {
       id: 'automod',
@@ -203,7 +215,15 @@ function HomePage() {
   );
 }
 
-function FeatureCard({ icon, title, description, delay, onClick }) {
+interface FeatureCardProps {
+  icon: React.ReactElement;
+  title: string;
+  description: string;
+  delay: number;
+  onClick: () => void;
+}
+
+function FeatureCard({ icon, title, description, delay, onClick }: FeatureCardProps) {
   return (
     <div
       onClick={onClick}
